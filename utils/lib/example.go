@@ -44,7 +44,6 @@ func Run() {
 	defer resp.Body.Close()
 	_, err = ioutil.ReadAll(resp.Body)
 	if resp.StatusCode == 200 {
-		println("close")
 		_pId := os.Getpid()
 		_ = syscall.Kill(_pId, syscall.SIGINT)
 	}
